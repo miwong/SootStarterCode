@@ -1,14 +1,12 @@
-# Starter code for Android application analysis using Soot.
+# Starter code for Soot Android analysis
 
-This provides a very basic template to analyze an APK.  The APK file should be passed in as the first command line argument.
+This provides a very basic template to analyze an Android APK with Soot.  The APK file should be passed in as the first command line argument.
 
-Gradle is used to build the application.  A wrapper script is provided that should download all of the dependencies.
-
-To build:
+To build the program, a Gradle script is provided:
 
     ./gradlew build
   
-To run (with a helper script that calls `./gradlew run`:
+You can also use Gradle to run the program.  A helper script is provided to help pass in command line arguments to `./gradlew run`:
 
     ./RunSootTutorial <APK file>
     
