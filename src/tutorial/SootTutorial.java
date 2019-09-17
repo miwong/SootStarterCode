@@ -93,12 +93,17 @@ public class SootTutorial {
         SootClass activityClass = Scene.v().getSootClass("android.app.Activity");
         Hierarchy cha = Scene.v().getActiveHierarchy();
 
+        // Look at all subclasses of Activity.
         for (SootClass activitySubClass : cha.getSubclassesOf(activityClass)) {
+            // Make sure this is an application class and not a framework one.
             if (!activitySubClass.isApplicationClass()) {
                 continue;
             }
 
-            for (SootMethod activityMethod: activitySubClass.getMethods()) {
+            // Look at the methods in this Activity subclass.
+            for (SootMethod activityMethod : activitySubClass.getMethods()) {
+                // If this method overrides a method from the parent Activity class,
+                // consider this an entry-point to the application.
                 if (activityClass.declaresMethod(activityMethod.getSubSignature())) {
                     entryPoints.add(activityMethod);
                 }
