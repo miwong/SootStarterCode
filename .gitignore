@@ -1,0 +1,11 @@
+# Gradle files
+build
+.gradle
+
+# VIM swap files
+*.swp
+*.swo
+*.swn
+
+.DS_Store
+
